@@ -659,6 +659,8 @@ static void redis_read_server_info(redis_node_t *rn) {
                     "blocked_clients", DS_TYPE_GAUGE);
   redis_handle_info(rn->name, rr->str, "memory", NULL, "used_memory",
                     DS_TYPE_GAUGE);
+  redis_handle_info(rn->name, rr->str, "file_size", NULL, "flash_memory",
+                    DS_TYPE_GAUGE);
   redis_handle_info(rn->name, rr->str, "memory_lua", NULL, "used_memory_lua",
                     DS_TYPE_GAUGE);
   /* changes_since_last_save: Deprecated in redis version 2.6 and above */
